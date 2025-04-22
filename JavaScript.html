@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+        <title>Вариант 7</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        caption {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .search-container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+        #searchInput {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+        <header>
+        <div class="logo">Вариант 7</div>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.php">Главная</a></li>
+                <li><a href="HTML.html">1.	HTML</a></li>
+                <li><a href="JavaScript.html">2.	JavaScript</a></li>
+                <li><a href="PHP.php">3.	PHP</a></li>
+                <li><a href="Bootstrap.html">4.	Bootstrap</a></li>
+                <li><a href="JSON.html">5.	JSON</a></li>
+            </ul>
+        </nav>
+    </header>
+    <center><h3>2. JavaScript: Добавьте фильтр для поиска по имени врача.</h3></center><h3>
+    <script src="js/script.js"></script>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Поиск по имени врача..." onkeyup="filterDoctors()">
+    </div>
+
+    <table id="doctorsTable">
+        <caption>Расписание приема врачей</caption>
+        <thead>
+            <tr>
+                <th>Доктор</th>
+                <th>Специальность</th>
+                <th>Время приема</th>
+                <th>Кабинет</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Батурина Екатерина Алексеевна</td>
+                <td>Терапевт</td>
+                <td>09:00 - 13:00 (Пн-Пт)</td>
+                <td>101</td>
+            </tr>
+            <tr>
+                <td>Галеев Иван Викторович</td>
+                <td>Хирург</td>
+                <td>10:00 - 15:00 (Пн, Ср, Пт)</td>
+                <td>205</td>
+            </tr>
+            <tr>
+                <td>Гусев Александр Игоревич</td>
+                <td>Офтальмолог</td>
+                <td>08:30 - 12:30 (Вт, Чт)</td>
+                <td>312</td>
+            </tr>
+            <tr>
+                <td>Должин Юрий Геннадьевич</td>
+                <td>Невролог</td>
+                <td>14:00 - 18:00 (Пн-Пт)</td>
+                <td>208</td>
+            </tr>
+            <tr>
+                <td>Зайцева Юлия Владимировна</td>
+                <td>Педиатр</td>
+                <td>09:00 - 16:00 (Пн-Пт)</td>
+                <td>104</td>
+            </tr>
+                        <tr>
+                <td>Захарова Анна Михайловна</td>
+                <td>Врач общей практики (семейный врач)</td>
+                <td>09:00 - 16:00 (Пн-Пт)</td>
+                <td>104</td>
+            </tr>
+                        <tr>
+                <td>Зорькина Екатерина Викторовна</td>
+                <td>Врач - терапевт участковый</td>
+                <td>09:00 - 16:00 (Пн-Пт)</td>
+                <td>104</td>
+            </tr>
+                        <tr>
+                <td>Каиргалиева Альбина Олеговна</td>
+                <td>Врач - терапевт участковый</td>
+                <td>09:00 - 16:00 (Пн-Пт)</td>
+                <td>104</td>
+            </tr>
+                        <tr>
+                <td>Калинин Евгений Александрович</td>
+                <td>врач - общей практики (семейный врач)</td>
+                <td>09:00 - 16:00 (Пн-Пт)</td>
+                <td>104</td>
+            </tr>
+                        <tr>
+                <td>Камолов Бахридин Джураевич</td>
+                <td>Врач - инфекционист</td>
+                <td>09:00 - 16:00 (Пн-Пт)</td>
+                <td>104</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function filterDoctors() {
+            // Получаем значение из поля ввода
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toUpperCase();
+            
+            // Получаем таблицу и строки
+            const table = document.getElementById("doctorsTable");
+            const tr = table.getElementsByTagName("tr");
+            
+            // Перебираем все строки таблицы (начиная с 1, пропускаем заголовок)
+            for (let i = 1; i < tr.length; i++) {
+                const td = tr[i].getElementsByTagName("td")[0]; // Первая ячейка (имя врача)
+                if (td) {
+                    const txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = ""; // Показываем строку
+                    } else {
+                        tr[i].style.display = "none"; // Скрываем строку
+                    }
+                }       
+            }
+        }
+    </script>
+</body>
+</html>

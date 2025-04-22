@@ -1,0 +1,75 @@
+{
+  "schedule": [
+    {
+      "doctor": "Иванова Анна Михайловна",
+      "specialization": "Терапевт",
+      "schedule": {
+        "monday": "09:00-13:00",
+        "tuesday": "09:00-13:00",
+        "wednesday": "09:00-13:00",
+        "thursday": "09:00-13:00",
+        "friday": "09:00-13:00",
+        "saturday": "выходной",
+        "sunday": "выходной"
+      },
+      "cabinet": 101
+    },
+    {
+      "doctor": "Петров Сергей Иванович",
+      "specialization": "Хирург",
+      "schedule": {
+        "monday": "10:00-15:00",
+        "tuesday": "выходной",
+        "wednesday": "10:00-15:00",
+        "thursday": "выходной",
+        "friday": "10:00-15:00",
+        "saturday": "09:00-12:00",
+        "sunday": "выходной"
+      },
+      "cabinet": 205
+    },
+    {
+      "doctor": "Сидорова Елена Владимировна",
+      "specialization": "Офтальмолог",
+      "schedule": {
+        "monday": "выходной",
+        "tuesday": "08:30-12:30",
+        "wednesday": "выходной",
+        "thursday": "08:30-12:30",
+        "friday": "выходной",
+        "saturday": "выходной",
+        "sunday": "выходной"
+      },
+      "cabinet": 312
+    },
+    {
+      "doctor": "Козлов Дмитрий Николаевич",
+      "specialization": "Невролог",
+      "schedule": {
+        "monday": "14:00-18:00",
+        "tuesday": "14:00-18:00",
+        "wednesday": "14:00-18:00",
+        "thursday": "14:00-18:00",
+        "friday": "14:00-18:00",
+        "saturday": "10:00-14:00",
+        "sunday": "выходной"
+      },
+      "cabinet": 208
+    },
+    {
+      "doctor": "Михайлова Ольга Сергеевна",
+      "specialization": "Педиатр",
+      "schedule": {
+        "monday": "09:00-16:00",
+        "tuesday": "09:00-16:00",
+        "wednesday": "09:00-16:00",
+        "thursday": "09:00-16:00",
+        "friday": "09:00-16:00",
+        "saturday": "09:00-13:00",
+        "sunday": "выходной"
+      },
+      "cabinet": 104
+    }
+  ],
+  "last_updated": "2023-11-15"
+}
